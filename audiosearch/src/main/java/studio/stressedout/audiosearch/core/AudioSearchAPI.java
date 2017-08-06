@@ -7,6 +7,7 @@ import java.util.List;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.functions.Function;
+import studio.stressedout.audiosearch.core.response.SearchResponse;
 import studio.stressedout.audiosearch.model.SearchResult;
 import studio.stressedout.audiosearch.service.AudioSearchAPIService;
 
@@ -23,7 +24,12 @@ public abstract class AudioSearchAPI extends AudioSearchAuth{
     return accessToken().flatMap(new Function<String, ObservableSource<List<SearchResult>>>() {
       @Override
       public ObservableSource<List<SearchResult>> apply(String s) throws Exception {
-        return audioSearchAPIService().search(query, "Bearer " + s);
+        return audioSearchAPIService().search(query, "Bearer " + s).map(new Function<SearchResponse, List<SearchResult>>() {
+          @Override
+          public List<SearchResult> apply(SearchResponse searchResponse) throws Exception {
+            return searchResponse.results;
+          }
+        });
       }
     });
   }

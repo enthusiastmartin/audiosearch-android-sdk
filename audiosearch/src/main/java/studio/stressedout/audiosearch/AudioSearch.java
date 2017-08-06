@@ -15,8 +15,10 @@ import studio.stressedout.audiosearch.util.AuthUtils;
 
 public class AudioSearch {
 
+  private final static String AUDIOSEARCH_BASE_AUTH_URL = "https://www.audiosear.ch/";
+  private final static String AUDIOSEARCH_BASE_API_URL = "https://www.audiosear.ch/api/";
+
   private String mApplicationID;
-  private String mAccessToken;
   private String mSecret;
 
   private AudioSearch(){}
@@ -37,11 +39,6 @@ public class AudioSearch {
       return this;
     }
 
-    public Builder accessToken(String token){
-      this.instance.mAccessToken = token;
-      return this;
-    }
-
     public Builder secret(String secret){
       this.instance.mSecret = secret;
       return this;
@@ -59,7 +56,7 @@ public class AudioSearch {
   private AudioSearchAPIService audioSearchAPIService;
 
   private void prepare() throws IOException {
-    if ( ( this.mApplicationID == null ) || ( this.mSecret == null) || ( this.mAccessToken == null )){
+    if ( ( this.mApplicationID == null ) || ( this.mSecret == null) ){
       throw new IOException("credentials not provided");
     }
 
@@ -67,7 +64,7 @@ public class AudioSearch {
 
     //AUTH PART
     Retrofit auth = new Retrofit.Builder()
-      .baseUrl("")
+      .baseUrl(AUDIOSEARCH_BASE_AUTH_URL)
       .addConverterFactory(GsonConverterFactory.create())
       .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
       .build();
@@ -76,7 +73,7 @@ public class AudioSearch {
 
     //API PART
     Retrofit api = new Retrofit.Builder()
-      .baseUrl("")
+      .baseUrl(AUDIOSEARCH_BASE_API_URL)
       .addConverterFactory(GsonConverterFactory.create())
       .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
       .build();

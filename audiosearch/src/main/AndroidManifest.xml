@@ -12,7 +12,7 @@
 
 
     <meta-data
-        android:name="studio.stressedout.test.API_KEY"
-        android:value="@string/test_api_key" />
+        android:name="studio.stressedout.test.APP_ID"
+        android:value="@string/test_app_id" />
 
 </manifest>

@@ -10,4 +10,9 @@
 
     </application>
 
+
+    <meta-data
+        android:name="studio.stressedout.test.API_KEY"
+        android:value="@string/test_api_key" />
+
 </manifest>

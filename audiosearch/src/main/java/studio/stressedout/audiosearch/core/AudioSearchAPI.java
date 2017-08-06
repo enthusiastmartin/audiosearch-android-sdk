@@ -23,7 +23,7 @@ public abstract class AudioSearchAPI extends AudioSearchAuth{
     return accessToken().flatMap(new Function<String, ObservableSource<List<SearchResult>>>() {
       @Override
       public ObservableSource<List<SearchResult>> apply(String s) throws Exception {
-        return audioSearchAPIService().search(query, s);
+        return audioSearchAPIService().search(query, "Bearer " + s);
       }
     });
   }

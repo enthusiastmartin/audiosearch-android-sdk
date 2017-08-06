@@ -70,15 +70,6 @@ public class AudioSearch extends  AudioSearchAPI{
 
     this.AUTH_SIGNATURE = "Basic " + AuthUtils.getSignature(this.mApplicationID, this.mSecret);
 
-    //AUTH PART
-    Retrofit auth = new Retrofit.Builder()
-      .baseUrl(AUDIOSEARCH_BASE_AUTH_URL)
-      .addConverterFactory(GsonConverterFactory.create())
-      .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-      .build();
-
-    audioSearchAuthService = auth.create(AudioSearchAuthService.class);
-
     OkHttpClient.Builder client = new OkHttpClient.Builder();
 
     client.addInterceptor(new Interceptor() {
@@ -94,6 +85,17 @@ public class AudioSearch extends  AudioSearchAPI{
         return chain.proceed(chain.request());
       }
     });
+
+    //AUTH PART
+    Retrofit auth = new Retrofit.Builder()
+      .baseUrl(AUDIOSEARCH_BASE_AUTH_URL)
+      .addConverterFactory(GsonConverterFactory.create())
+      .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+      .client(client.build())
+      .build();
+
+    audioSearchAuthService = auth.create(AudioSearchAuthService.class);
+
 
     //API PART
     Retrofit api = new Retrofit.Builder()

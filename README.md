@@ -11,6 +11,25 @@ This is still in alpha release. Only basic API are currently present.
 
 ## Usage
 
+```java
+AudioSearch audioSearch = AudioSearch.Builder.create()
+    .applicationID( YOUR_APP_ID )
+    .secret( YOUR_APP_SECRET)
+    .build();
+```
+
+To perform a search:
+```java
+
+    audiosearch.search("query string")
+        .subscribeOn(Schedulers.newThread())
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribeWith( < your observer> );
+
+```
+
+
+
 ## Installation
 
 ```groovy

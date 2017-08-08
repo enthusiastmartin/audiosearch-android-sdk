@@ -8,6 +8,7 @@ import retrofit2.http.Header;
 import retrofit2.http.Path;
 import studio.stressedout.audiosearch.core.response.SearchResponse;
 import studio.stressedout.audiosearch.model.AudioSearchCategory;
+import studio.stressedout.audiosearch.model.AudioSearchEpisode;
 import studio.stressedout.audiosearch.model.AudioSearchNetwork;
 import studio.stressedout.audiosearch.model.AudioSearchShow;
 
@@ -32,5 +33,6 @@ public interface AudioSearchAPIService {
   @GET("shows/{sid}")
   Observable<AudioSearchShow> showById(@Path("sid") int id, @Header("Authorization") String accessToken);
 
-
+  @GET("shows/{sid}/episodes")
+  Observable<List<AudioSearchEpisode>> showEpisodes(@Path("sid") int showId, @Header("Authorization") String accessToken);
 }

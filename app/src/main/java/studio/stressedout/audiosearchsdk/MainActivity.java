@@ -14,6 +14,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DefaultObserver;
 import io.reactivex.schedulers.Schedulers;
 import studio.stressedout.audiosearch.AudioSearch;
+import studio.stressedout.audiosearch.model.AudioSearchEpisode;
 import studio.stressedout.audiosearch.model.AudioSearchShow;
 import studio.stressedout.audiosearch.model.SearchResult;
 
@@ -71,7 +72,32 @@ public class MainActivity extends AppCompatActivity {
 
           @Override
           public void onError(Throwable e) {
-            Log.d(TAG, "Error retreiving show " + e.getLocalizedMessage());
+            Log.d(TAG, "Error retrieving show " + e.getLocalizedMessage());
+          }
+
+          @Override
+          public void onComplete() {
+
+          }
+        });
+
+      audioSearch.showEpisodes(3280)
+        .subscribeOn(Schedulers.newThread())
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribeWith(new DefaultObserver<List<AudioSearchEpisode>>() {
+          @Override
+          public void onNext(List<AudioSearchEpisode> value) {
+            Log.d(TAG, "Received episodes " + Integer.toString(value.size()));
+
+            for (AudioSearchEpisode episode : value){
+              Log.d(TAG, episode.title);
+              Log.d(TAG, episode.audio_files.get(0).mp3);
+            }
+          }
+
+          @Override
+          public void onError(Throwable e) {
+
           }
 
           @Override

@@ -4,8 +4,6 @@ import android.support.annotation.NonNull;
 
 import java.io.IOException;
 
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -67,10 +65,12 @@ public class AudioSearch extends  AudioSearchAPI{
 
     this.AUTH_SIGNATURE = "Basic " + AuthUtils.getSignature(this.mApplicationID, this.mSecret);
 
+    /*
     HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
     interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
     OkHttpClient client = new OkHttpClient.Builder()
       .addInterceptor(interceptor).build();
+      */
     /*
     OkHttpClient.Builder client = new OkHttpClient.Builder();
 
@@ -92,7 +92,7 @@ public class AudioSearch extends  AudioSearchAPI{
       .baseUrl(AUDIOSEARCH_BASE_AUTH_URL)
       .addConverterFactory(GsonConverterFactory.create())
       .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-      .client(client)
+      //.client(client)
       .build();
 
     audioSearchAuthService = auth.create(AudioSearchAuthService.class);
@@ -103,7 +103,7 @@ public class AudioSearch extends  AudioSearchAPI{
       .baseUrl(AUDIOSEARCH_BASE_API_URL)
       .addConverterFactory(GsonConverterFactory.create())
       .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-      .client(client)
+      //.client(client)
       .build();
 
 

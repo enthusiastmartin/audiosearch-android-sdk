@@ -9,6 +9,7 @@ import io.reactivex.ObservableSource;
 import io.reactivex.functions.Function;
 import studio.stressedout.audiosearch.core.response.SearchResponse;
 import studio.stressedout.audiosearch.model.AudioSearchCategory;
+import studio.stressedout.audiosearch.model.AudioSearchEpisode;
 import studio.stressedout.audiosearch.model.AudioSearchNetwork;
 import studio.stressedout.audiosearch.model.AudioSearchShow;
 import studio.stressedout.audiosearch.model.SearchResult;
@@ -73,5 +74,12 @@ public abstract class AudioSearchAPI extends AudioSearchAuth{
     });
   }
 
-
+  public Observable<List<AudioSearchEpisode>> showEpisodes(final int showId){
+    return accessToken().flatMap(new Function<String, ObservableSource<List<AudioSearchEpisode>>>() {
+      @Override
+      public ObservableSource<List<AudioSearchEpisode>> apply(String s) throws Exception {
+        return audioSearchAPIService().showEpisodes(showId, AudioSearchAPI.this.getAuthHeader(s));
+      }
+    });
+  }
 }

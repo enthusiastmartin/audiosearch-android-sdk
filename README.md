@@ -1,7 +1,7 @@
 
 ## Overview
 
-Simple Audiosearch Android SDK with RxJava support.
+Unofficial Audiosearch Android SDK with RxJava support.
 
 Audiosearch.ch is a one-stop search and recommendation engine for podcasts.
 

@@ -14,6 +14,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DefaultObserver;
 import io.reactivex.schedulers.Schedulers;
 import studio.stressedout.audiosearch.AudioSearch;
+import studio.stressedout.audiosearch.model.AudioSearchShow;
 import studio.stressedout.audiosearch.model.SearchResult;
 
 /**
@@ -58,7 +59,26 @@ public class MainActivity extends AppCompatActivity {
         }
       });
 
+      audioSearch.showById(2380)
+        .subscribeOn(Schedulers.newThread())
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribeWith(new DefaultObserver<AudioSearchShow>() {
+          @Override
+          public void onNext(AudioSearchShow value) {
+            Log.d(TAG, "Got show " + value.title);
+            Log.d(TAG, "Got show " + value.getShowThumb());
+          }
 
+          @Override
+          public void onError(Throwable e) {
+            Log.d(TAG, "Error retreiving show " + e.getLocalizedMessage());
+          }
+
+          @Override
+          public void onComplete() {
+
+          }
+        });
     } catch (PackageManager.NameNotFoundException e) {
       Log.e(TAG, "Failed to load meta-data, NameNotFound: " + e.getMessage());
     } catch (NullPointerException e) {

@@ -1,5 +1,7 @@
 package studio.stressedout.audiosearch.core;
 
+import android.support.annotation.NonNull;
+
 import io.reactivex.Observable;
 import io.reactivex.functions.Function;
 import studio.stressedout.audiosearch.model.AuthResult;
@@ -17,7 +19,7 @@ public abstract class AudioSearchAuth {
   protected abstract AudioSearchAuthService getAuthService();
   protected abstract String getAuthSignature();
 
-  public Observable<String> accessToken(){
+  Observable<String> accessToken(){
     if ( mAccessToken != null ){
       return Observable.just(mAccessToken);
     }else {
@@ -29,5 +31,9 @@ public abstract class AudioSearchAuth {
         }
       });
     }
+  }
+
+  protected String getAuthHeader(@NonNull String token){
+    return "Bearer " + token;
   }
 }

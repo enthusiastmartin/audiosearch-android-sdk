@@ -9,6 +9,10 @@ Audiosearch.ch is a one-stop search and recommendation engine for podcasts.
 
 This is still in alpha release. Only basic API are currently present.
 
+Currently in active development.
+
+Suggestions and help are welcome.
+
 ## Usage
 
 ```java

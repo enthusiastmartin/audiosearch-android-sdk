@@ -116,4 +116,30 @@ public class MainActivity extends AppCompatActivity {
 
   }
 
+
+  private void createCustomClient(){
+      /*
+    HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+    interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+    OkHttpClient client = new OkHttpClient.Builder()
+      .addInterceptor(interceptor).build();
+      */
+    /*
+    OkHttpClient.Builder client = new OkHttpClient.Builder();
+
+    client.addInterceptor(new Interceptor() {
+      @Override
+      public Response intercept(final Chain chain) throws IOException {
+        Request r = chain.request();
+        Log.d("LOG", "INTER " + r.url().toString());
+        Request request = chain.request().newBuilder()
+          .addHeader("Authorization", "Bearer " + mAccessToken)
+          .build();
+        return chain.proceed(chain.request());
+      }
+    });
+  */
+
+  }
+
 }

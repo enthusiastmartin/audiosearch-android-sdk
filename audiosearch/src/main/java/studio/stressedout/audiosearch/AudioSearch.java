@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import java.io.IOException;
 
+import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -23,6 +24,8 @@ public class AudioSearch extends  AudioSearchAPI{
 
   private String mApplicationID;
   private String mSecret;
+
+  private OkHttpClient customClient;
 
   private AudioSearch(){}
 
@@ -47,6 +50,11 @@ public class AudioSearch extends  AudioSearchAPI{
       return this;
     }
 
+    public Builder httpClient(OkHttpClient client){
+      this.instance.customClient = client;
+      return this;
+    }
+
     public AudioSearch build() throws IOException {
       this.instance.prepare();
       return this.instance;
@@ -65,49 +73,47 @@ public class AudioSearch extends  AudioSearchAPI{
 
     this.AUTH_SIGNATURE = "Basic " + AuthUtils.getSignature(this.mApplicationID, this.mSecret);
 
-    /*
-    HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-    interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-    OkHttpClient client = new OkHttpClient.Builder()
-      .addInterceptor(interceptor).build();
-      */
-    /*
-    OkHttpClient.Builder client = new OkHttpClient.Builder();
+    if ( this.customClient != null ){
+      //AUTH PART
+      Retrofit auth = new Retrofit.Builder()
+        .baseUrl(AUDIOSEARCH_BASE_AUTH_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+        .client(this.customClient)
+        .build();
 
-    client.addInterceptor(new Interceptor() {
-      @Override
-      public Response intercept(final Chain chain) throws IOException {
-        Request r = chain.request();
-        Log.d("LOG", "INTER " + r.url().toString());
-        Request request = chain.request().newBuilder()
-          .addHeader("Authorization", "Bearer " + mAccessToken)
-          .build();
-        return chain.proceed(chain.request());
-      }
-    });
-  */
+      audioSearchAuthService = auth.create(AudioSearchAuthService.class);
 
-    //AUTH PART
-    Retrofit auth = new Retrofit.Builder()
-      .baseUrl(AUDIOSEARCH_BASE_AUTH_URL)
-      .addConverterFactory(GsonConverterFactory.create())
-      .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-      //.client(client)
-      .build();
+      //API PART
+      Retrofit api = new Retrofit.Builder()
+        .baseUrl(AUDIOSEARCH_BASE_API_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+        .client(this.customClient)
+        .build();
 
-    audioSearchAuthService = auth.create(AudioSearchAuthService.class);
+      audioSearchAPIService = api.create(AudioSearchAPIService.class);
+    }else{
+      //AUTH PART
+      Retrofit auth = new Retrofit.Builder()
+        .baseUrl(AUDIOSEARCH_BASE_AUTH_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+        //.client(client)
+        .build();
 
+      audioSearchAuthService = auth.create(AudioSearchAuthService.class);
 
-    //API PART
-    Retrofit api = new Retrofit.Builder()
-      .baseUrl(AUDIOSEARCH_BASE_API_URL)
-      .addConverterFactory(GsonConverterFactory.create())
-      .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-      //.client(client)
-      .build();
+      //API PART
+      Retrofit api = new Retrofit.Builder()
+        .baseUrl(AUDIOSEARCH_BASE_API_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+        //.client(client)
+        .build();
 
-
-    audioSearchAPIService = api.create(AudioSearchAPIService.class);
+      audioSearchAPIService = api.create(AudioSearchAPIService.class);
+    }
   }
 
   @Override

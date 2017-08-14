@@ -27,6 +27,9 @@ public class AudioSearch extends  AudioSearchAPI{
 
   private OkHttpClient customClient;
 
+  private String mAudioSearchAuthBaseUrl;
+  private String mAudioSearchAPIBaseUrl;
+
   private AudioSearch(){}
 
   public static final class Builder{
@@ -55,6 +58,34 @@ public class AudioSearch extends  AudioSearchAPI{
       return this;
     }
 
+    /**
+     * Use only in case AudioSearch base urls changes
+     * @param url new base url
+     * @return @{@link Builder}
+     */
+
+    public Builder audioSearchAuthBaseUrl(String url){
+      this.instance.mAudioSearchAuthBaseUrl = url;
+      return this;
+    }
+
+    /**
+     * Use only in case AudioSearch base urls changes
+     * @param url new api base url
+     * @return @{@link Builder}
+     */
+
+    public Builder audioSearchAPIBaseUrl(String url){
+      this.instance.mAudioSearchAPIBaseUrl = url;
+      return this;
+    }
+
+
+    /**
+     * Creates AudioSearch instance
+     * @return
+     * @throws IOException
+     */
     public AudioSearch build() throws IOException {
       this.instance.prepare();
       return this.instance;
@@ -76,7 +107,7 @@ public class AudioSearch extends  AudioSearchAPI{
     if ( this.customClient != null ){
       //AUTH PART
       Retrofit auth = new Retrofit.Builder()
-        .baseUrl(AUDIOSEARCH_BASE_AUTH_URL)
+        .baseUrl(( this.mAudioSearchAuthBaseUrl == null ) ? AUDIOSEARCH_BASE_AUTH_URL : this.mAudioSearchAuthBaseUrl)
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .client(this.customClient)
@@ -86,7 +117,7 @@ public class AudioSearch extends  AudioSearchAPI{
 
       //API PART
       Retrofit api = new Retrofit.Builder()
-        .baseUrl(AUDIOSEARCH_BASE_API_URL)
+        .baseUrl((this.mAudioSearchAPIBaseUrl == null ) ? AUDIOSEARCH_BASE_API_URL : this.mAudioSearchAPIBaseUrl)
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .client(this.customClient)

@@ -13,6 +13,8 @@ import java.util.List;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DefaultObserver;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import studio.stressedout.audiosearch.AudioSearch;
 import studio.stressedout.audiosearch.model.AudioSearchEpisode;
 import studio.stressedout.audiosearch.model.AudioSearchShow;
@@ -37,8 +39,11 @@ public class MainActivity extends AppCompatActivity {
       String app_id = bundle.getString("studio.stressedout.test.APP_ID");
       String app_secret = bundle.getString("studio.stressedout.test.APP_SECRET");
 
-      AudioSearch audioSearch = AudioSearch.Builder.create().applicationID(app_id).secret(app_secret).build();
-
+      AudioSearch audioSearch = AudioSearch.Builder.create()
+        .applicationID(app_id)
+        .secret(app_secret)
+        .httpClient(this.createCustomClient())
+        .build();
 
       audioSearch.search("security")
         .subscribeOn(Schedulers.newThread())
@@ -117,13 +122,12 @@ public class MainActivity extends AppCompatActivity {
   }
 
 
-  private void createCustomClient(){
-      /*
+  private OkHttpClient createCustomClient(){
     HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
     interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
     OkHttpClient client = new OkHttpClient.Builder()
       .addInterceptor(interceptor).build();
-      */
+    return client;
     /*
     OkHttpClient.Builder client = new OkHttpClient.Builder();
 

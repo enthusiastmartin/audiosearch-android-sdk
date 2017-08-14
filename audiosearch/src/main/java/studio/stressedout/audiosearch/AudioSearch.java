@@ -32,6 +32,9 @@ public class AudioSearch extends  AudioSearchAPI{
 
   private AudioSearch(){}
 
+  /**
+   * AudioSearch Builder
+   */
   public static final class Builder{
     private  AudioSearch instance;
 
@@ -83,8 +86,8 @@ public class AudioSearch extends  AudioSearchAPI{
 
     /**
      * Creates AudioSearch instance
-     * @return
-     * @throws IOException
+     * @return @{@link AudioSearch}
+     * @throws IOException if credentials are missing
      */
     public AudioSearch build() throws IOException {
       this.instance.prepare();
@@ -130,7 +133,6 @@ public class AudioSearch extends  AudioSearchAPI{
         .baseUrl(AUDIOSEARCH_BASE_AUTH_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        //.client(client)
         .build();
 
       audioSearchAuthService = auth.create(AudioSearchAuthService.class);
@@ -140,7 +142,6 @@ public class AudioSearch extends  AudioSearchAPI{
         .baseUrl(AUDIOSEARCH_BASE_API_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        //.client(client)
         .build();
 
       audioSearchAPIService = api.create(AudioSearchAPIService.class);

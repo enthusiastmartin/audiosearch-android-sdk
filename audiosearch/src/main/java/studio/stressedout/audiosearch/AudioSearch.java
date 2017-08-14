@@ -42,20 +42,39 @@ public class AudioSearch extends  AudioSearchAPI{
       this.instance = new AudioSearch();
     };
 
+    /**
+     * Create factory for AudioSearch
+     * @return @{@link Builder}
+     */
     public static Builder create(){
       return new Builder();
     }
 
+    /**
+     * Sets application id
+     * @param ID Audiosearch application ID
+     * @return  @{@link Builder}
+     */
     public Builder applicationID(String ID){
       this.instance.mApplicationID = ID;
       return this;
     }
 
+    /**
+     * Sets application secret
+     * @param secret Audiosearch secret
+     * @return @{@link Builder}
+     */
     public Builder secret(String secret){
       this.instance.mSecret = secret;
       return this;
     }
 
+    /**
+     * Sets custom OkHttpClient
+     * @param client (@{@link OkHttpClient} OkHttpClient
+     * @return @{@link Builder}
+     */
     public Builder httpClient(OkHttpClient client){
       this.instance.customClient = client;
       return this;
@@ -66,7 +85,6 @@ public class AudioSearch extends  AudioSearchAPI{
      * @param url new base url
      * @return @{@link Builder}
      */
-
     public Builder audioSearchAuthBaseUrl(String url){
       this.instance.mAudioSearchAuthBaseUrl = url;
       return this;
@@ -77,12 +95,10 @@ public class AudioSearch extends  AudioSearchAPI{
      * @param url new api base url
      * @return @{@link Builder}
      */
-
     public Builder audioSearchAPIBaseUrl(String url){
       this.instance.mAudioSearchAPIBaseUrl = url;
       return this;
     }
-
 
     /**
      * Creates AudioSearch instance

@@ -11,7 +11,7 @@ import studio.stressedout.audiosearch.service.AudioSearchAuthService;
  * Created by martin on 8/6/17.
  */
 
-public abstract class AudioSearchAuth {
+abstract class AudioSearchAuth {
   private static final String GRANT_TYPE =  "client_credentials";
 
   private String  mAccessToken = null;

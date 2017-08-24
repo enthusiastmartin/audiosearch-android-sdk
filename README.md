@@ -37,7 +37,7 @@ To perform a search:
 ## Installation
 
 ```groovy
-compile 'studio.stressedout.audiosearch:audiosearch:0.2-alpha1
+compile 'studio.stressedout.audiosearch:audiosearch:0.3.1-alpha
 ```
 
 

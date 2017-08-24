@@ -1,7 +1,5 @@
 package studio.stressedout.audiosearch;
 
-import android.support.annotation.NonNull;
-
 import java.io.IOException;
 
 import okhttp3.OkHttpClient;
@@ -44,7 +42,7 @@ public class AudioSearch extends  AudioSearchAPI{
 
     /**
      * Create factory for AudioSearch
-     * @return @{@link Builder}
+     * @return {@link Builder}
      */
     public static Builder create(){
       return new Builder();
@@ -53,7 +51,7 @@ public class AudioSearch extends  AudioSearchAPI{
     /**
      * Sets application id
      * @param ID Audiosearch application ID
-     * @return  @{@link Builder}
+     * @return  {@link Builder}
      */
     public Builder applicationID(String ID){
       this.instance.mApplicationID = ID;
@@ -63,7 +61,7 @@ public class AudioSearch extends  AudioSearchAPI{
     /**
      * Sets application secret
      * @param secret Audiosearch secret
-     * @return @{@link Builder}
+     * @return {@link Builder}
      */
     public Builder secret(String secret){
       this.instance.mSecret = secret;
@@ -72,8 +70,8 @@ public class AudioSearch extends  AudioSearchAPI{
 
     /**
      * Sets custom OkHttpClient
-     * @param client (@{@link OkHttpClient} OkHttpClient
-     * @return @{@link Builder}
+     * @param client OkHttpClient
+     * @return {@link Builder}
      */
     public Builder httpClient(OkHttpClient client){
       this.instance.customClient = client;
@@ -83,7 +81,7 @@ public class AudioSearch extends  AudioSearchAPI{
     /**
      * Use only in case AudioSearch base urls changes
      * @param url new base url
-     * @return @{@link Builder}
+     * @return {@link Builder}
      */
     public Builder audioSearchAuthBaseUrl(String url){
       this.instance.mAudioSearchAuthBaseUrl = url;
@@ -93,7 +91,7 @@ public class AudioSearch extends  AudioSearchAPI{
     /**
      * Use only in case AudioSearch base urls changes
      * @param url new api base url
-     * @return @{@link Builder}
+     * @return {@link Builder}
      */
     public Builder audioSearchAPIBaseUrl(String url){
       this.instance.mAudioSearchAPIBaseUrl = url;
@@ -102,7 +100,7 @@ public class AudioSearch extends  AudioSearchAPI{
 
     /**
      * Creates AudioSearch instance
-     * @return @{@link AudioSearch}
+     * @return {@link AudioSearch}
      * @throws IOException if credentials are missing
      */
     public AudioSearch build() throws IOException {
@@ -174,7 +172,6 @@ public class AudioSearch extends  AudioSearchAPI{
     return this.AUTH_SIGNATURE;
   }
 
-  @NonNull
   @Override
   protected AudioSearchAPIService audioSearchAPIService() {
     return audioSearchAPIService;

@@ -1,7 +1,5 @@
 package studio.stressedout.audiosearch.core;
 
-import android.support.annotation.NonNull;
-
 import java.util.List;
 
 import io.reactivex.Observable;
@@ -21,7 +19,7 @@ import studio.stressedout.audiosearch.service.AudioSearchAPIService;
 
 public abstract class AudioSearchAPI extends AudioSearchAuth{
 
-  protected abstract @NonNull
+  protected abstract
   AudioSearchAPIService audioSearchAPIService();
 
   public Observable<List<SearchResult>> search(final String query){

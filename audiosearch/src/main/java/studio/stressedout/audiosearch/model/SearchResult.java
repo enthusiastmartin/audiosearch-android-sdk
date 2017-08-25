@@ -14,8 +14,8 @@ public class SearchResult {
   private ImageUrls image_urls;
 
   private static class ImageUrls {
-    public String thumb;
-    public String full;
+    String thumb;
+    String full;
   }
 
   public String getShowThumb(){

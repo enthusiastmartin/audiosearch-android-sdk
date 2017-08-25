@@ -1,7 +1,5 @@
 package studio.stressedout.audiosearch.model;
 
-import java.util.ArrayList;
-
 /**
  * Created by martin on 5/24/17.
  */
@@ -13,23 +11,24 @@ public class SearchResult {
 
   public String description;
 
-  public ArrayList<ImageFileObject> image_files;
+  private ImageUrls image_urls;
+
+  private static class ImageUrls {
+    public String thumb;
+    public String full;
+  }
 
   public String getShowThumb(){
-    return image_files.get(0).file.thumb.url;
+    if ( image_urls != null ){
+      return image_urls.thumb;
+    }
+    return null;
   }
 
-  private class ImageFileObject {
-    public int id;
-    public FileDetail file;
-  }
-
-  private class FileDetail {
-    public String url;
-    public ThumbImageFile thumb;
-  }
-
-  private class ThumbImageFile{
-    public String url;
+  public String getShowFullImage(){
+    if ( image_urls != null ){
+      return image_urls.full;
+    }
+    return null;
   }
 }

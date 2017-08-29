@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         public void onNext(AudioSearchShow value) {
           Log.d(TAG, "Got show " + value.title);
           Log.d(TAG, "Got show " + value.getShowThumb());
+          Log.d(TAG, "Got show " + value.categories.size());
         }
 
         @Override

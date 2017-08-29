@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+Version 0.5.2-alpha *(2017-08-29)*
+----------------------------
+ * FIX: Show category object instead of strings
+
+
 Version 0.5.1-alpha *(2017-08-29)*
 ----------------------------
  * NEW: Added Trending API

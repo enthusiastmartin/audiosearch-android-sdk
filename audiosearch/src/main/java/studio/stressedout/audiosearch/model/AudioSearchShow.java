@@ -16,7 +16,7 @@ public class AudioSearchShow {
 
   public Network network;
 
-  public ArrayList<String> categories;
+  public ArrayList<AudioSearchCategory> categories;
 
   private ImageUrls  image_urls;
 

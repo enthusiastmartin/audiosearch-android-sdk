@@ -14,7 +14,7 @@ ext {
     siteUrl = 'https://github.com/enthusiastmartin/audiosearch-android-sdk'
     gitUrl = 'https://github.com/enthusiastmartin/audiosearch-android-sdk.git'
 
-    libraryVersion = '0.5.1-alpha'
+    libraryVersion = '0.5.2-alpha'
 
     developerId = 'stressedout.studio'
     developerName = 'Martin Hloska'

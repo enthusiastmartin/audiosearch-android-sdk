@@ -4,6 +4,7 @@ Change Log
 Version 0.5-alpha *(2017-08-25)*
 ----------------------------
  * NEW: New API changes for Show, Episode
+ * NEW: Search pagination ( added query param page )
 
 
 Version 0.4-alpha *(2017-08-25)*

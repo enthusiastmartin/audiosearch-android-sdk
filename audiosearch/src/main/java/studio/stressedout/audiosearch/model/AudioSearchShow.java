@@ -12,33 +12,38 @@ public class AudioSearchShow {
 
   public String title;
 
-  public String network;
+  public String description;
 
-  public String status;
+  public Network network;
 
   public ArrayList<String> categories;
 
-  public String description;
-
-  public int number_of_episodes;
-
-  public ArrayList<Integer> episode_ids;
-
-  private ArrayList<ImageFileObject> image_files;
+  private ImageUrls  image_urls;
 
   public String getShowThumb(){
-    if ( image_files != null && image_files.size() > 0 && image_files.get(0) != null) {
-      return image_files.get(0).url.thumb;
+
+    if ( image_urls != null ){
+      return image_urls.thumb;
     }
+
     return null;
   }
 
-  private class ImageFileObject {
-    public FileDetail url;
+  public String getShowFullPicture(){
+    if ( image_urls != null ){
+      return image_urls.full;
+    }
+
+    return null;
   }
 
-  private class FileDetail{
+  private static class ImageUrls{
     String full;
     String thumb;
+  }
+
+  public static class Network {
+    public int id;
+    public String name;
   }
 }

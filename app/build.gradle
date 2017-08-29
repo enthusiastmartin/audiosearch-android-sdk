@@ -18,9 +18,15 @@ android {
         }
     }
 }
+def butterKnifeVersion = "8.7.0"
 
 dependencies {
     compile project(':audiosearch')
+
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    compile "com.jakewharton:butterknife:${butterKnifeVersion}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${butterKnifeVersion}"
 
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'com.squareup.okhttp3:logging-interceptor:3.8.0'

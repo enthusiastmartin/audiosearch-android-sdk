@@ -1,0 +1,341 @@
+{
+   "query":"security",
+   "total_results":73,
+   "page":1,
+   "results_per_page":10,
+   "results":[
+      {
+         "id":27285,
+         "itunes_id":1117871288,
+         "title":"O'Reilly Security Podcast - O'Reilly Media Podcast",
+         "network":{
+            "id":420,
+            "name":"O'Reilly Media"
+         },
+         "categories":[
+            {
+               "id":"3",
+               "parent_id":null,
+               "name":"Business"
+            },
+            {
+               "id":"8",
+               "parent_id":null,
+               "name":"Technology"
+            },
+            {
+               "id":"67",
+               "parent_id":8,
+               "name":"Tech News"
+            }
+         ],
+         "description":"Security insight and analysis.",
+         "rss_url":"http://feeds.podtrac.com/5xZaPOpMqOrn",
+         "buzz_score":null,
+         "image_urls":{
+            "full":"https://d2u1padl9j7w5j.cloudfront.net/o-reilly-security-podcast-o-reilly-media-podcast.oz1l0W.audiosear.ch/600x600bb.jpg",
+            "thumb":"https://d2u1padl9j7w5j.cloudfront.net/o-reilly-security-podcast-o-reilly-media-podcast.oz1l0W.audiosear.ch/thumb_600x600bb.jpg"
+         },
+         "urls":{
+            "self":"https://www.audiosear.ch/api/shows/27285",
+            "ui":"https://www.audiosear.ch/show/27285/o-reilly-security-podcast--o-reilly-media-podcast"
+         }
+      },
+      {
+         "id":7668,
+         "itunes_id":91472687,
+         "title":"Paul's Security Weekly",
+         "network":null,
+         "categories":[
+            {
+               "id":"67",
+               "parent_id":8,
+               "name":"Tech News"
+            },
+            {
+               "id":"8",
+               "parent_id":null,
+               "name":"Technology"
+            },
+            {
+               "id":"68",
+               "parent_id":8,
+               "name":"Software How-To"
+            }
+         ],
+         "description":"For the latest in computer security news, hacking, and research!  We sit around, drink cocktails, and talk security.",
+         "rss_url":"http://podcast.securityweekly.com/rss",
+         "buzz_score":"0.40216",
+         "image_urls":{
+            "full":"https://d2u1padl9j7w5j.cloudfront.net/paul-s-security-weekly.ulHy7e.audiosear.ch/600x600bb.jpg",
+            "thumb":"https://d2u1padl9j7w5j.cloudfront.net/paul-s-security-weekly.ulHy7e.audiosear.ch/thumb_600x600bb.jpg"
+         },
+         "urls":{
+            "self":"https://www.audiosear.ch/api/shows/7668",
+            "ui":"https://www.audiosear.ch/show/7668/paul-s-security-weekly"
+         }
+      },
+      {
+         "id":23558,
+         "itunes_id":956270301,
+         "title":"Rational Security",
+         "network":null,
+         "categories":[
+            {
+               "id":"7",
+               "parent_id":null,
+               "name":"News \u0026 Politics"
+            },
+            {
+               "id":"53",
+               "parent_id":null,
+               "name":"Government \u0026 Organizations"
+            },
+            {
+               "id":"54",
+               "parent_id":53,
+               "name":"National"
+            }
+         ],
+         "description":"A weekly discussion of national security and foreign policy matters hosted by Shane Harris of the Daily Beast and featuring Brookings senior fellows Tamara Cofman Wittes and Benjamin Wittes, and managing editor of the Lawfare blog Susan Hennessey.",
+         "rss_url":"http://rationalsecurity.libsyn.com/rss",
+         "buzz_score":"0.50556",
+         "image_urls":{
+            "full":"https://d2u1padl9j7w5j.cloudfront.net/rational-security.uENAdh.audiosear.ch/600x600bb.jpg",
+            "thumb":"https://d2u1padl9j7w5j.cloudfront.net/rational-security.uENAdh.audiosear.ch/thumb_600x600bb.jpg"
+         },
+         "urls":{
+            "self":"https://www.audiosear.ch/api/shows/23558",
+            "ui":"https://www.audiosear.ch/show/23558/rational-security"
+         }
+      },
+      {
+         "id":22736,
+         "itunes_id":1179376133,
+         "title":"Cyber Security Interviews",
+         "network":null,
+         "categories":[
+            {
+               "id":"67",
+               "parent_id":8,
+               "name":"Tech News"
+            },
+            {
+               "id":"8",
+               "parent_id":null,
+               "name":"Technology"
+            },
+            {
+               "id":"3",
+               "parent_id":null,
+               "name":"Business"
+            },
+            {
+               "id":"12",
+               "parent_id":3,
+               "name":"Careers"
+            },
+            {
+               "id":"21",
+               "parent_id":8,
+               "name":"Podcasting"
+            }
+         ],
+         "description":"Cyber Security Interviews is the weekly podcast dedicated to digging into the minds of the influencers, thought leaders, and individuals who shape the cyber security industry.",
+         "rss_url":"http://cybersecurityinterviews.com/feed/podcast",
+         "buzz_score":"0.41883",
+         "image_urls":{
+            "full":"https://d2u1padl9j7w5j.cloudfront.net/cyber-security-interviews.x57Ulb.audiosear.ch/600x600bb.jpg",
+            "thumb":"https://d2u1padl9j7w5j.cloudfront.net/cyber-security-interviews.x57Ulb.audiosear.ch/thumb_600x600bb.jpg"
+         },
+         "urls":{
+            "self":"https://www.audiosear.ch/api/shows/22736",
+            "ui":"https://www.audiosear.ch/show/22736/cyber-security-interviews"
+         }
+      },
+      {
+         "id":18590,
+         "itunes_id":1195001633,
+         "title":"Smashing Security",
+         "network":null,
+         "categories":[
+            {
+               "id":"67",
+               "parent_id":8,
+               "name":"Tech News"
+            },
+            {
+               "id":"8",
+               "parent_id":null,
+               "name":"Technology"
+            }
+         ],
+         "description":"Join computer security industry veterans Graham Cluley and Carole Theriault  as they chat about cybercrime, hacking and online privacy.\nFollow the podcast on Twitter at \u003ca href=\"https://twitter.com/SmashinSecurity\"\u003e@SmashinSecurity\u003c/a\u003e. New episodes released every Thursday. Bonus \"splinter\" episodes when we feel like it...\n",
+         "rss_url":"http://www.smashingsecurity.com/rss",
+         "buzz_score":"0.37761",
+         "image_urls":{
+            "full":"https://d2u1padl9j7w5j.cloudfront.net/smashing-security.0P9Dyw.audiosear.ch/600x600bb.jpg",
+            "thumb":"https://d2u1padl9j7w5j.cloudfront.net/smashing-security.0P9Dyw.audiosear.ch/thumb_600x600bb.jpg"
+         },
+         "urls":{
+            "self":"https://www.audiosear.ch/api/shows/18590",
+            "ui":"https://www.audiosear.ch/show/18590/smashing-security"
+         }
+      },
+      {
+         "id":6613,
+         "itunes_id":304863991,
+         "title":"SANS Internet Storm Center Daily Network Security and Information Security Podcast",
+         "network":null,
+         "categories":[
+            {
+               "id":"67",
+               "parent_id":8,
+               "name":"Tech News"
+            },
+            {
+               "id":"8",
+               "parent_id":null,
+               "name":"Technology"
+            }
+         ],
+         "description":"Daily update on current network security threats",
+         "rss_url":"https://isc.sans.edu/dailypodcast.xml",
+         "buzz_score":"0.39803",
+         "image_urls":{
+            "full":"https://d2u1padl9j7w5j.cloudfront.net/sans-internet-storm-center-daily-network-security.QDxfE1.audiosear.ch/600x600bb.jpg",
+            "thumb":"https://d2u1padl9j7w5j.cloudfront.net/sans-internet-storm-center-daily-network-security.QDxfE1.audiosear.ch/thumb_600x600bb.jpg"
+         },
+         "urls":{
+            "self":"https://www.audiosear.ch/api/shows/6613",
+            "ui":"https://www.audiosear.ch/show/6613/sans-internet-storm-center-daily-network-security-and-information-security-podcast"
+         }
+      },
+      {
+         "id":26235,
+         "itunes_id":1247135894,
+         "title":"Security In Five Podcast",
+         "network":null,
+         "categories":[
+            {
+               "id":"21",
+               "parent_id":8,
+               "name":"Podcasting"
+            },
+            {
+               "id":"8",
+               "parent_id":null,
+               "name":"Technology"
+            }
+         ],
+         "description":"Security In 5 podcast brings you security news, tips, opinions in the area of Information, IT and general security...all in about five minutes. Easy to listen to, easy to understand and adding awareness to help you strengthen your personal and business security posture. Be aware, be secure.",
+         "rss_url":"http://securityinfive.libsyn.com/rss",
+         "buzz_score":null,
+         "image_urls":{
+            "full":"https://d2u1padl9j7w5j.cloudfront.net/security-in-five-podcast.PFuTJR.audiosear.ch/600x600bb.jpg",
+            "thumb":"https://d2u1padl9j7w5j.cloudfront.net/security-in-five-podcast.PFuTJR.audiosear.ch/thumb_600x600bb.jpg"
+         },
+         "urls":{
+            "self":"https://www.audiosear.ch/api/shows/26235",
+            "ui":"https://www.audiosear.ch/show/26235/security-in-five-podcast"
+         }
+      },
+      {
+         "id":19727,
+         "itunes_id":466659176,
+         "title":"Down the Security Rabbithole",
+         "network":null,
+         "categories":[
+            {
+               "id":"67",
+               "parent_id":8,
+               "name":"Tech News"
+            },
+            {
+               "id":"8",
+               "parent_id":null,
+               "name":"Technology"
+            }
+         ],
+         "description":"Security. Some assembly required.\n\nSecurity is HARD, and 'real security' is a compromise between usability and security while knowing you're still accepting risk.\nThis podcast alternates between interesting interviews and news analysis every other week - tune in, subscribe and join the conversation on REAL security issues relevant to your enterprise.\n\nRead the blog \u003e http://hp.com/go/white-rabbit\nFollow along on Twitter \u003e http://twitter.com/wh1t3rabbit",
+         "rss_url":"http://podcast.wh1t3rabbit.net/rss",
+         "buzz_score":null,
+         "image_urls":{
+            "full":"https://d2u1padl9j7w5j.cloudfront.net/down-the-security-rabbithole.NbXztV.audiosear.ch/600x600bb.jpg",
+            "thumb":"https://d2u1padl9j7w5j.cloudfront.net/down-the-security-rabbithole.NbXztV.audiosear.ch/thumb_600x600bb.jpg"
+         },
+         "urls":{
+            "self":"https://www.audiosear.ch/api/shows/19727",
+            "ui":"https://www.audiosear.ch/show/19727/down-the-security-rabbithole"
+         }
+      },
+      {
+         "id":23098,
+         "itunes_id":302845147,
+         "title":"Virtualization Security Roundtable",
+         "network":null,
+         "categories":[
+            {
+               "id":"42",
+               "parent_id":8,
+               "name":"Gadgets"
+            },
+            {
+               "id":"8",
+               "parent_id":null,
+               "name":"Technology"
+            }
+         ],
+         "description":"The Virtualization Security Round Table Podcast provides an open forum to discuss all things related to Virtualization, Virtual Environment, and Cloud Computing Security. The podcast is hosted by Talkshoe, with the after podcast write-ups and notes are hosted on The Virtualization Practice (http://www.virtualizationpractice.com)\nThis Podcast was created using www.talkshoe.com",
+         "rss_url":"http://recordings.talkshoe.com/rss34217.xml",
+         "buzz_score":null,
+         "image_urls":{
+            "full":"https://d2u1padl9j7w5j.cloudfront.net/virtualization-security-roundtable.sUkrcR.audiosear.ch/600x600bb.jpg",
+            "thumb":"https://d2u1padl9j7w5j.cloudfront.net/virtualization-security-roundtable.sUkrcR.audiosear.ch/thumb_600x600bb.jpg"
+         },
+         "urls":{
+            "self":"https://www.audiosear.ch/api/shows/23098",
+            "ui":"https://www.audiosear.ch/show/23098/virtualization-security-roundtable"
+         }
+      },
+      {
+         "id":8741,
+         "itunes_id":799131292,
+         "title":"Brakeing Down Security Podcast",
+         "network":null,
+         "categories":[
+            {
+               "id":"67",
+               "parent_id":8,
+               "name":"Tech News"
+            },
+            {
+               "id":"8",
+               "parent_id":null,
+               "name":"Technology"
+            },
+            {
+               "id":"9",
+               "parent_id":null,
+               "name":"Education"
+            },
+            {
+               "id":"38",
+               "parent_id":9,
+               "name":"Educational Technology"
+            }
+         ],
+         "description":"A podcast all about the world of Security, Privacy, Compliance, and Regulatory issues that arise in today's workplace.  Co-hosts Bryan Brake, Brian Boettcher, and Amanda Berlin teach concepts that aspiring Information Security Professionals need to know, or refresh the memories of the seasoned veterans.",
+         "rss_url":"http://brakeingsecurity.libsyn.com/rss",
+         "buzz_score":"0.41352",
+         "image_urls":{
+            "full":"https://d2u1padl9j7w5j.cloudfront.net/brakeing-down-security-podcast.qBEWPJ.audiosear.ch/600x600bb.jpg",
+            "thumb":"https://d2u1padl9j7w5j.cloudfront.net/brakeing-down-security-podcast.qBEWPJ.audiosear.ch/thumb_600x600bb.jpg"
+         },
+         "urls":{
+            "self":"https://www.audiosear.ch/api/shows/8741",
+            "ui":"https://www.audiosear.ch/show/8741/brakeing-down-security-podcast"
+         }
+      }
+   ]
+}

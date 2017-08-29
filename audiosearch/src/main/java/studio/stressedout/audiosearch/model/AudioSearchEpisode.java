@@ -10,6 +10,7 @@ public class AudioSearchEpisode {
 
   public int id;
   public String title;
+
   public String data_created;
 
   public int show_id;
@@ -22,7 +23,6 @@ public class AudioSearchEpisode {
   public ArrayList<EpisodeAudioFile> audio_files;
 
   public EpisodeImageUrls image_urls;
-
 
   public class EpisodeAudioFile{
     public int id;

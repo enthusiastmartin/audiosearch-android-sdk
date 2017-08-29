@@ -54,7 +54,7 @@ public class AudioSearchTest {
 
     assertThat(audioSearch, is(notNullValue()));
 
-    TestObserver<List<SearchResult>> testObserver = audioSearch.search("security").test();
+    TestObserver<List<SearchResult>> testObserver = audioSearch.search("security", 1).test();
 
     testObserver.awaitTerminalEvent();
 

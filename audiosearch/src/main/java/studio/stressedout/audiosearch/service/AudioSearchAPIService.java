@@ -6,6 +6,7 @@ import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 import studio.stressedout.audiosearch.core.response.SearchResponse;
 import studio.stressedout.audiosearch.model.AudioSearchCategory;
 import studio.stressedout.audiosearch.model.AudioSearchEpisode;
@@ -19,7 +20,7 @@ import studio.stressedout.audiosearch.model.AudioSearchShow;
 public interface AudioSearchAPIService {
 
   @GET("search/shows/{query}")
-  Observable<SearchResponse> search(@Path("query") String query, @Header("Authorization") String accessToken);
+  Observable<SearchResponse> search(@Path("query") String query, @Query("page") int page, @Header("Authorization") String accessToken);
 
   @GET("categories")
   Observable<List<AudioSearchCategory>> categories(@Header("Authorization") String accessToken);

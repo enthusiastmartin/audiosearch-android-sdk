@@ -22,11 +22,11 @@ public abstract class AudioSearchAPI extends AudioSearchAuth{
   protected abstract
   AudioSearchAPIService audioSearchAPIService();
 
-  public Observable<List<SearchResult>> search(final String query){
+  public Observable<List<SearchResult>> search(final String query, final int page){
     return accessToken().flatMap(new Function<String, ObservableSource<List<SearchResult>>>() {
       @Override
       public ObservableSource<List<SearchResult>> apply(String s) throws Exception {
-        return audioSearchAPIService().search(query, AudioSearchAPI.this.getAuthHeader(s)).map(new Function<SearchResponse, List<SearchResult>>() {
+        return audioSearchAPIService().search(query, page, AudioSearchAPI.this.getAuthHeader(s)).map(new Function<SearchResponse, List<SearchResult>>() {
           @Override
           public List<SearchResult> apply(SearchResponse searchResponse) throws Exception {
             return searchResponse.results;

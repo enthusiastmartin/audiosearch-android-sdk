@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
   @OnClick(R.id.search_btn)
   void performSearch(){
-    audioSearch.search("security")
+    audioSearch.search("security", 2)
       .subscribeOn(Schedulers.newThread())
       .observeOn(AndroidSchedulers.mainThread())
       .subscribeWith(new DefaultObserver<List<SearchResult>>() {

@@ -6,6 +6,7 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.functions.Function;
 import studio.stressedout.audiosearch.core.response.SearchResponse;
+import studio.stressedout.audiosearch.core.response.TrendingResponse;
 import studio.stressedout.audiosearch.model.AudioSearchCategory;
 import studio.stressedout.audiosearch.model.AudioSearchEpisode;
 import studio.stressedout.audiosearch.model.AudioSearchNetwork;
@@ -77,6 +78,26 @@ public abstract class AudioSearchAPI extends AudioSearchAuth{
       @Override
       public ObservableSource<List<AudioSearchEpisode>> apply(String s) throws Exception {
         return audioSearchAPIService().showEpisodes(showId, AudioSearchAPI.this.getAuthHeader(s));
+      }
+    });
+  }
+
+  public Observable<AudioSearchEpisode> trending(){
+    return accessToken().flatMap(new Function<String, ObservableSource<AudioSearchEpisode>>() {
+      @Override
+      public ObservableSource<AudioSearchEpisode> apply(String s) throws Exception {
+        return  audioSearchAPIService().trending(AudioSearchAPI.this.getAuthHeader(s))
+          .flatMap(new Function<List<TrendingResponse>, ObservableSource<AudioSearchEpisode>>() {
+            @Override
+            public ObservableSource<AudioSearchEpisode> apply(List<TrendingResponse> trendingResponses) throws Exception {
+              return Observable.fromIterable(trendingResponses).flatMap(new Function<TrendingResponse, ObservableSource<AudioSearchEpisode>>() {
+                @Override
+                public ObservableSource<AudioSearchEpisode> apply(TrendingResponse trendingResponse) throws Exception {
+                  return Observable.fromIterable(trendingResponse.related_episodes);
+                }
+              });
+            }
+          });
       }
     });
   }

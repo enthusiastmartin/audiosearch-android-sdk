@@ -14,6 +14,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DefaultObserver;
+import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -134,6 +135,31 @@ public class MainActivity extends AppCompatActivity {
         }
       });
 
+  }
+
+  @OnClick(R.id.trending_btn)
+  void getTrending(){
+    audioSearch.trending()
+      .subscribeOn(Schedulers.newThread())
+      .observeOn(AndroidSchedulers.mainThread())
+      .subscribeWith(new DisposableObserver<AudioSearchEpisode>() {
+        @Override
+        public void onNext(AudioSearchEpisode value) {
+
+          Log.d("BLABLA", value.title);
+
+        }
+
+        @Override
+        public void onError(Throwable e) {
+
+        }
+
+        @Override
+        public void onComplete() {
+
+        }
+      });
   }
 
   private OkHttpClient createCustomClient(){

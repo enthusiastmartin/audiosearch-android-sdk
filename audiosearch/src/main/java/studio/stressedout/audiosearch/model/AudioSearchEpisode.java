@@ -11,7 +11,8 @@ public class AudioSearchEpisode {
   public int id;
   public String title;
 
-  public String data_created;
+  public String date_created;
+  public String date_added;
 
   public int show_id;
   public String show_title;

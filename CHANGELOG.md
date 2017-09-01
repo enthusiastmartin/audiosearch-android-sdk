@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+Version 0.5.3-alpha *(2017-09-01)*
+----------------------------
+ * FIX: Episode attributes
+
+
 Version 0.5.2-alpha *(2017-08-29)*
 ----------------------------
  * FIX: Show category object instead of strings

@@ -1,17 +1,11 @@
 
 ## Overview
 
+As of November 2017: Audiosearch.fm no longer exists.
+
 Unofficial Audiosearch Android SDK with RxJava support.
 
 Audiosearch.ch is a one-stop search and recommendation engine for podcasts.
-
-## Warning
-
-This is still in alpha release. Only basic API are currently present.
-
-Currently in active development.
-
-Suggestions and help are welcome.
 
 ## Usage
 
